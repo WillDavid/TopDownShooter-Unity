@@ -6,19 +6,29 @@ public class GunController : MonoBehaviour
 {
 
     SpriteRenderer spriteGun;
+
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform spawnBullet;
     
     void Start()
     {
         spriteGun = GetComponent<SpriteRenderer>();
+        
     }
 
     
     void Update()
     {
-        gun();
+        Aim();
+        Shoot();
+    }
+    void Shoot(){
+        if(Input.GetButtonDown("Fire1")){
+            Instantiate(bullet, spawnBullet.position, transform.rotation);
+        }
     }
 
-    void gun(){
+    void Aim(){
         Vector3 mousePos = Input.mousePosition;
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
         Vector2 offSet = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
@@ -31,7 +41,11 @@ public class GunController : MonoBehaviour
         }else{
             spriteGun.flipY = false;
         }
+
+       
     }
+
+
 
 
 }
