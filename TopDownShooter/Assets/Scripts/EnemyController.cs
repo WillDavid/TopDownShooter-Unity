@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
         if(other.tag == "Bullet"){
             anim.SetBool("Dead", true);
             speedEnemy = 0;
-            Destroy(gameObject, 2);
+            Destroy(gameObject, 1);
             gameObject.tag = "Finish";   
         } 
     }
