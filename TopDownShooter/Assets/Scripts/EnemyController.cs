@@ -24,10 +24,10 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Bullet"){
-            anim.SetBool("Dead", true);
+            gameObject.tag = "Finish";
             speedEnemy = 0;
+            anim.SetBool("Dead", true);
             Destroy(gameObject, 1);
-            gameObject.tag = "Finish";   
         } 
     }
 

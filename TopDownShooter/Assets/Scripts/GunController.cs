@@ -42,10 +42,6 @@ public class GunController : MonoBehaviour
             spriteGun.flipY = false;
         }
 
-       
     }
-
-
-
 
 }
