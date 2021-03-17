@@ -6,6 +6,7 @@ public class GunController : MonoBehaviour
 {
 
     SpriteRenderer spriteGun;
+    AudioSource audioGun;
 
     [SerializeField] GameObject bullet;
     [SerializeField] Transform spawnBullet;
@@ -13,6 +14,7 @@ public class GunController : MonoBehaviour
     void Start()
     {
         spriteGun = GetComponent<SpriteRenderer>();
+        audioGun = GetComponent<AudioSource>();
         
     }
 
@@ -25,6 +27,7 @@ public class GunController : MonoBehaviour
     void Shoot(){
         if(Input.GetButtonDown("Fire1")){
             Instantiate(bullet, spawnBullet.position, transform.rotation);
+            audioGun.Play();
         }
     }
 

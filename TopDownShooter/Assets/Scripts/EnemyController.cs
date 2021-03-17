@@ -8,11 +8,13 @@ public class EnemyController : MonoBehaviour
 
     GameObject player;
     Animator anim;
+    AudioSource audioDeadEnemy;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponentInChildren<Animator>();
+        audioDeadEnemy = GetComponent<AudioSource>();
     }
 
     
@@ -28,6 +30,7 @@ public class EnemyController : MonoBehaviour
             speedEnemy = 0;
             anim.SetBool("Dead", true);
             Destroy(gameObject, 0.3f);
+            audioDeadEnemy.Play();
         } 
     }
 
