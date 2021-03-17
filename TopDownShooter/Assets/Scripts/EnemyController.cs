@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
             gameObject.tag = "Finish";
             speedEnemy = 0;
             anim.SetBool("Dead", true);
-            Destroy(gameObject, 1);
+            Destroy(gameObject, 0.3f);
         } 
     }
 
